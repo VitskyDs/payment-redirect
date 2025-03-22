@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Failed</title>
-    <script>
-        window.location.href = "https://enrollapp.glide.page/dl/74c4fe"; // Change this URL to your failure screen
-    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            background-color: #D32F2F;
+            color: white;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #B71C1C;
+        }
+    </style>
 </head>
 <body>
-    <p>Payment failed. <a href="https://enrollapp.glide.page/dl/74c4fe">Click here</a> if you are not redirected.</p>
+    <h2>Payment Failed ❌</h2>
+    <p>Something went wrong. Please try again.</p>
+    <button onclick="redirect()">Try Again</button>
+
+    <script>
+        function redirect() {
+            window.location.href = "https://enrollapp.glide.page/dl/failure"; // Change this to your actual failure deep link
+        }
+    </script>
 </body>
 </html>
