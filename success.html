@@ -4,35 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Successful</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <script>
+        // Send a webhook request to Make
+        fetch("https://hook.eu2.make.com/rdb94hv8lnfnicswtzh136c8diuqe179", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                userId: localStorage.getItem("userId"), // Retrieve user ID
+                serviceId: localStorage.getItem("serviceId"), // Retrieve service ID
+                status: "success"
+            })
+        }).then(() => {
+            // Notify Glide that the payment was successful
+            window.parent.postMessage({ payment: "success" }, "*");
+        });
+    </script>
 </head>
 <body>
-    <h2>Payment Successful 🎉</h2>
-    <p>Thank you for your payment.</p>
-<!--     <button onclick="window.location.href='https://enrollapp.glide.page/dl/d0a5f4'">Continue</button> -->
-
-<!--     <script>
-        function redirect() {
-            window.location.href = "https://enrollapp.glide.page/dl/74c4fe"; // Change this to your actual success deep link
-        }
-    </script> -->
+    <h2>Payment Successful</h2>
+    <p>Thank you for your payment!</p>
+    <button onclick="window.location.href='https://enrollapp.glide.page/'">Back to App</button>
 </body>
 </html>
