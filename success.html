@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Payment Successful 🎉</h2>
+    <p>Thank you for your payment. Click the button below to continue.</p>
+    <button onclick="redirect()">Go to App</button>
+
+    <script>
+        function redirect() {
+            window.location.href = "https://enrollapp.glide.page/dl/74c4fe"; // Change this to your actual success deep link
+        }
+    </script>
+</body>
+</html>
