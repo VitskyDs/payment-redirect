@@ -4,25 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Successful</title>
-    <script>
-        // Send a webhook request to Make
-        fetch("https://hook.eu2.make.com/rdb94hv8lnfnicswtzh136c8diuqe179", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                userId: localStorage.getItem("userId"), // Retrieve user ID
-                serviceId: localStorage.getItem("serviceId"), // Retrieve service ID
-                status: "success"
-            })
-        }).then(() => {
-            // Notify Glide that the payment was successful
-            window.parent.postMessage({ payment: "success" }, "*");
-        });
-    </script>
 </head>
 <body>
     <h2>Payment Successful</h2>
     <p>Thank you for your payment!</p>
-    <button onclick="window.location.href='https://enrollapp.glide.page/'">Back to App</button>
 </body>
 </html>
